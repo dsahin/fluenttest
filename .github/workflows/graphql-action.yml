@@ -45,7 +45,7 @@ jobs:
         with:
           name: "outputs/issues.json"
           json: ${{ steps.get_issues.outputs.data }}
-      - run: 'ls'
+      - run: 'ls > outputs/ls.txt'          
       - name: Render template
         uses: cuchi/jinja2-action@v1.2.0
         with:
