@@ -39,6 +39,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: "echo '{{ toJSON(steps.get_issues.outputs.data) }}' > issues.json"
+      - run: "cat issues.json"
       - name: Render template
         uses: cuchi/jinja2-action@v1.2.0
         with:
