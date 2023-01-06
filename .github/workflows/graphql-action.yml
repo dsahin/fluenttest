@@ -4,6 +4,10 @@ jobs:
   generateIssuesReport:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@master
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo    
       - uses: octokit/graphql-action@v2.x
         id: get_issues
         with:
@@ -45,9 +49,13 @@ jobs:
         with:
           name: "outputs/issues.json"
           json: ${{ steps.get_issues.outputs.data }}
-      - run: 'pwd'              
-      - run: 'ls'          
-      - run: 'ls ../'
+      - name: Render template
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: issues.j2
+          output_file: outputs/issues.md
+          data_file: outputs/issues.json
+          data_format: json # Will try to guess from the extension instead (unnecessary in this case)               
       - name: Upload PDF
         uses: actions/upload-artifact@v1
         with:
