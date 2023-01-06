@@ -60,9 +60,9 @@ jobs:
         uses: baileyjm02/markdown-to-pdf@v1
         with:
           input_dir: outputs
-          output_dir: outputs           
+          output_dir: pdfs           
       - name: Upload PDF
         uses: actions/upload-artifact@v1
         with:
-          name: outputs
-          path: outputs          
+          name: pdfs
+          path: pdfs          
