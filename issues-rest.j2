@@ -10,7 +10,7 @@ titlepage: true
 titlepage-color: "D8DE2C"
 ...
 
-{% for issue in entries %}
+{% for issue in data %}
 ##{{ issue.title|e }}
 **Labels**: {{ issue.labels|e }}
 
