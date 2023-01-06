@@ -1,6 +1,3 @@
-<h1>Members</h1>
-<ul>
 {% for issue in repository.issues.edges %}
-  <li>{{ issue.node.id|e }}</li>
+  ##{{ issue.node.title|e }}##
 {% endfor %}
-</ul>
