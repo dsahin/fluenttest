@@ -38,7 +38,12 @@ jobs:
           repo: ${{ github.event.repository.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo \"${{ toJSON(steps.get_issues.outputs.data) }}\" > outputs/issues.json"
+      - name: create-json
+        id: create-json
+        uses: jsdaniell/create-json@v1.2.2
+        with:
+          name: "outputs/issues.json"
+          json: ${{ steps.get_issues.outputs.data }}
       - name: Upload PDF
         uses: actions/upload-artifact@v1
         with:
