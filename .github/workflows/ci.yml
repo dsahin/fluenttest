@@ -25,7 +25,7 @@ jobs:
         with:
           files: '**/*.template'
           output-filename: '{{ file.dir }}/{{ file.name }}'
-          delete-input-file: true
+          delete-input-file: false
           html-escape: false
           dry-run: false
       - name: Commit files
