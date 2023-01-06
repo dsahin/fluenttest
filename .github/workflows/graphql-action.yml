@@ -38,15 +38,7 @@ jobs:
           repo: ${{ github.event.repository.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo \"${{ toJSON(steps.get_issues.outputs.data) }}\" > issues.json"
-      - run: "cat issues.json"
-      - name: Render template
-        uses: cuchi/jinja2-action@v1.2.0
-        with:
-          template: issues.j2
-          output_file: outputs/issues.md
-          data_file: issues.json
-          data_format: json # Will try to guess from the extension instead (unnecessary in this case)
+      - run: "echo \"${{ toJSON(steps.get_issues.outputs.data) }}\" > outputs/issues.json"
       - name: Upload PDF
         uses: actions/upload-artifact@v1
         with:
