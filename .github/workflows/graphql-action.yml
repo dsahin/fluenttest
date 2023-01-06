@@ -45,7 +45,9 @@ jobs:
         with:
           name: "outputs/issues.json"
           json: ${{ steps.get_issues.outputs.data }}
-      - run: 'ls > outputs/ls.txt'          
+      - run: 'pwd'              
+      - run: 'ls'          
+      - run: 'ls ../'
       - name: Upload PDF
         uses: actions/upload-artifact@v1
         with:
