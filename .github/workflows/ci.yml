@@ -28,6 +28,9 @@ jobs:
           delete-input-file: false
           html-escape: false
           dry-run: false
+      - name: add pdf to git
+        run: |
+          git add .          
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
