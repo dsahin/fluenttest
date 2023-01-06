@@ -24,7 +24,7 @@ jobs:
       - uses: pedrolamas/handlebars-action@v2.1.0
         with:
           files: '**/*.template'
-          output-filename: '{{ file.dir }}/{{ file.name }}'
+          output-filename: 'handlebars-action.txt'
           delete-input-file: false
           html-escape: false
           dry-run: false
