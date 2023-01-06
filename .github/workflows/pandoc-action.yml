@@ -63,10 +63,10 @@ jobs:
           args: >-  # allows you to break string into multiple lines
             --from markdown
             --template https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.0.0/eisvogel.tex 
-            --output=pdfs/issues.pdf
+            --output=outputs/issues.pdf
             outputs/issues.md             
       - name: Upload PDF
         uses: actions/upload-artifact@v1
         with:
-          name: pdfs
-          path: pdfs          
+          name: outputs
+          path: outputs          
