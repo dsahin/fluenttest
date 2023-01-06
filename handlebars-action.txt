@@ -1,0 +1,40 @@
+env.user: runner
+
+github.action: __pedrolamas_handlebars-action
+github.actor: dsahin
+github.api_url: https://api.github.com
+github.base_ref: 
+github.event_name: workflow_dispatch
+github.event_path: /home/runner/work/_temp/_github_workflow/event.json
+github.graphql_url: https://api.github.com/graphql
+github.head_ref: 
+github.ref: refs/heads/master
+github.repository: dsahin/fluenttest
+github.repository_name: fluenttest
+github.run_id: 3855480059
+github.run_number: 6
+github.server_url: https://github.com
+github.sha: 566da486eab5cd9cf38c1d60028b7158425911cb
+github.workflow: CI
+github.workspace: /home/runner/work/fluenttest/fluenttest
+github.runner_os: Linux
+
+file.path: /home/runner/work/fluenttest/fluenttest/handlebar-action.txt.template
+file.root: /
+file.dir: /home/runner/work/fluenttest/fluenttest
+file.base: handlebar-action.txt.template
+file.ext: .template
+file.name: handlebar-action.txt
+
+outputFile.path: handlebars-action.txt
+outputFile.root: 
+outputFile.dir: 
+outputFile.base: handlebars-action.txt
+outputFile.ext: .txt
+outputFile.name: handlebars-action
+
+date.year: 2023
+date.hours: 13
+date.fullString: Fri Jan 06 2023 13:11:43 GMT+0000 (Coordinated Universal Time)
+date.utc.hours: 13
+date.utc.fullString: Fri, 06 Jan 2023 13:11:43 GMT
