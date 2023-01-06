@@ -38,6 +38,7 @@ jobs:
           repo: ${{ github.event.repository.name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: "mkdir outputs"
       - name: create-json
         id: create-json
         uses: jsdaniell/create-json@v1.2.2
