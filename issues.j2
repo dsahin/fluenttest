@@ -1,3 +1,6 @@
 {% for issue in repository.issues.edges %}
-  ##{{ issue.node.title|e }}##
+##{{ issue.node.title|e }}##
+**Labels**: {{ issue.node.labels|e }}
+
+{{ issue.node.body|e }}
 {% endfor %}
