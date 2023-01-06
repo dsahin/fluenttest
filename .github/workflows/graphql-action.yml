@@ -45,6 +45,13 @@ jobs:
         with:
           name: "outputs/issues.json"
           json: ${{ steps.get_issues.outputs.data }}
+      - name: Render template
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: issues.j2
+          output_file: outputs/issues.md
+          data_file: outputs/issues.json
+          data_format: json # Will try to guess from the extension instead (unnecessary in this case)          
       - name: Upload PDF
         uses: actions/upload-artifact@v1
         with:
