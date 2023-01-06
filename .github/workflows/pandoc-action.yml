@@ -1,4 +1,4 @@
-name: octokit/graphql-action
+name: octokit/graphql-action-with-pandoc
 on: workflow_dispatch
 jobs:
   generateIssuesReport:
@@ -61,7 +61,7 @@ jobs:
         uses: docker://rstropek/pandoc-latex
         with:
           args: >-  # allows you to break string into multiple lines
-            --standalonefrom markdown
+            --from markdown
             --template https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.0.0/eisvogel.tex 
             --output=pdfs/issues.pdf
             outputs/issues.md             
