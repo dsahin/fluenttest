@@ -1,0 +1,18 @@
+---
+title: "Vinaque sanguine metuenti cuiquam Alcyone fixus"
+author: [Author Name]
+date: "2017-02-20"
+subject: "Markdown"
+keywords: [Markdown, Example]
+subtitle: "Aesculeae domus vincemur et Veneris adsuetus lapsum"
+lang: "en"
+titlepage: true
+titlepage-color: "D8DE2C"
+...
+
+{% for issue in entries %}
+##{{ issue.title|e }}
+**Labels**: {{ issue.labels|e }}
+
+{{ issue.body|e }}
+{% endfor %}

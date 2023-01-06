@@ -23,7 +23,7 @@ jobs:
       - name: Render template
         uses: cuchi/jinja2-action@v1.2.0
         with:
-          template: issues.j2
+          template: issues-rest.j2
           output_file: outputs/issues.md
           data_file: outputs/issues.json
           data_format: json # Will try to guess from the extension instead (unnecessary in this case)               
