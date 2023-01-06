@@ -56,6 +56,11 @@ jobs:
           output_file: outputs/issues.md
           data_file: outputs/issues.json
           data_format: json # Will try to guess from the extension instead (unnecessary in this case)               
+      - name: Build PDF
+        uses: baileyjm02/markdown-to-pdf@v1
+        with:
+          input_dir: outputs
+          output_dir: outputs           
       - name: Upload PDF
         uses: actions/upload-artifact@v1
         with:
