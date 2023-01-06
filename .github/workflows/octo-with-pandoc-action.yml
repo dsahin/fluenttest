@@ -8,6 +8,8 @@ jobs:
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo    
+      - run: "mkdir outputs"
+      - run: "mkdir pdfs"          
       # Install Node 12
       - uses: actions/setup-node@v3
         with:
@@ -18,48 +20,6 @@ jobs:
       - run: node .github/actions/issues.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
-      - uses: octokit/graphql-action@v2.x
-        id: get_issues
-        with:
-          query: |
-            query release($owner:String!,$repo:String!) {
-              repository(owner:$owner,name:$repo) {
-                issues(last:100, states:OPEN) {
-                  edges {
-                    node {
-                        id 
-                        title
-                        url
-                        number
-                        state
-                        author {
-                          url
-                        }
-                        labels(first:5) {
-                          edges {
-                            node {
-                              name
-                            }
-                          }
-                        }
-                      body
-                    }
-                  }
-                }
-              }
-            }
-          owner: ${{ github.event.repository.owner.login }}
-          repo: ${{ github.event.repository.name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "mkdir outputs"
-      - run: "mkdir pdfs"
-      - name: create-json
-        id: create-json
-        uses: jsdaniell/create-json@v1.2.2
-        with:
-          name: "outputs/issues.json"
-          json: ${{ steps.get_issues.outputs.data }}
       - name: Render template
         uses: cuchi/jinja2-action@v1.2.0
         with:

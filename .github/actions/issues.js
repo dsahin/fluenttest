@@ -10,7 +10,9 @@ async function getIssues() {
         repo
     });
 
-    console.log(data);
+    const fs = require('fs');
+    let jsonData = JSON.stringify(data);
+    fs.writeFileSync('outputs/issues.json', jsonData);
 }
 
 function start() {
