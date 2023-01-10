@@ -32,9 +32,11 @@ jobs:
         with:
           args: >-  # allows you to break string into multiple lines
             --from markdown
-            --template https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.0.0/eisvogel.tex 
+            --template https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.1.0/eisvogel.tex
+            --highlight-style tango
+            --filter pandoc-latex-environment
             --output=outputs/issues.pdf
-            outputs/issues.md             
+            outputs/issues.md
       - name: Upload PDF
         uses: actions/upload-artifact@v1
         with:

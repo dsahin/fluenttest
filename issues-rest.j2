@@ -11,8 +11,9 @@ titlepage-color: "D8DE2C"
 ...
 
 {% for issue in data %}
-##{{ issue.title|safe }}
-**Labels**: {{ issue.labels|safe }}
+## {{ issue.title|safe }}
+
+{% for label in issue.labels %}{{ label.name|safe }} {% endfor %}
 
 {{ issue.body|safe }}
 {% endfor %}
