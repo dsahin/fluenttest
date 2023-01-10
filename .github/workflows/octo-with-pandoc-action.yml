@@ -28,11 +28,11 @@ jobs:
           data_file: outputs/issues.json
           data_format: json # Will try to guess from the extension instead (unnecessary in this case)               
       - name: converting markdown to pdf
-        uses: docker://rstropek/pandoc-latex
+        uses: docker://pandoc/latex
         with:
           args: >-  # allows you to break string into multiple lines
             --from markdown
-            --template https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.1.0/eisvogel.tex
+            --template eisvogel
             --highlight-style tango
             --output=outputs/issues.pdf
             outputs/issues.md
