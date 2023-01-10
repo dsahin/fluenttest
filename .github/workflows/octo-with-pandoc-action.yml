@@ -34,7 +34,6 @@ jobs:
             --from markdown
             --template https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/v2.1.0/eisvogel.tex
             --highlight-style tango
-            --filter pandoc-latex-environment
             --output=outputs/issues.pdf
             outputs/issues.md
       - name: Upload PDF
