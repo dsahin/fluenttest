@@ -32,7 +32,6 @@ jobs:
         with:
           args: >-  # allows you to break string into multiple lines
             --from markdown
-            --template eisvogel
             --highlight-style tango
             --output=outputs/issues.pdf
             outputs/issues.md
